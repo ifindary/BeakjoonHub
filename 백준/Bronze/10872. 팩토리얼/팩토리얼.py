@@ -1,17 +1,11 @@
 import sys
 
 def factorial(n: int):
-    temp_ans=1
-
     if n == 0:
-        return temp_ans
-    
-    for i in range(1,n+1):
-        temp_ans=temp_ans*i
-
-    return temp_ans
+        return 1
+    else:
+        return factorial(n-1)*n
 
 number=int(sys.stdin.readline().strip())
-ans=factorial(number)
 
-print(ans)
+print(factorial(number))

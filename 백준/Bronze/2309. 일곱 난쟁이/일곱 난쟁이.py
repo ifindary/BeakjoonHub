@@ -5,13 +5,10 @@ def find_dwarf(dwarfs:list):
     total = sum(dwarfs)
 
     for i in range(9):
-        for j in range(9):
-            if i != j  and total - dwarfs[i] - dwarfs[j] == 100:
-                temp_i=dwarfs[i]
-                temp_j=dwarfs[j]
-
-                dwarfs.remove(temp_i)
-                dwarfs.remove(temp_j)
+        for j in range(i+1, 9):
+            if total - dwarfs[i] - dwarfs[j] == 100:
+                dwarfs.remove(dwarfs[i])
+                dwarfs.remove(dwarfs[j-1])
                 
                 return dwarfs
     

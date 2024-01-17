@@ -4,30 +4,24 @@ print = sys.stdout.write
 
 # N명의 사람을 K번째마다 삭제
 N, K = map(int, input().split())
-people = []
-delete = []
+people = [] # 대기열에 있는 사람
+delete = [] # 삭제된 사람 목록
 
-a = K-1
+idx = 0 # 몇 번째 사람을 삭제할 건지
 
 for i in range(1, N+1):
     people.append(i)
 
-# pop은 인덱스, remove는 값을 제거한다는 점을 주의
-delete.append(people.pop(K-1))
-
 while len(people) != 0:
-    if len(people) == 1:
-        delete.append(people.pop())
-    elif a + K-1 < len(people):
-        a = a+K-1
-        delete.append(people.pop(a))
+    idx += K - 1 # 인덱스는 0부터 시작이니까 1 빼기
+
+    if idx < len(people):
+        delete.append(people.pop(idx))
     else:
-        a = a+K-len(people)-1
+        while idx >= len(people):
+            idx = idx - len(people)
         
-        while a >= len(people):
-            a = a - len(people)
-        
-        delete.append(people.pop(a))
+        delete.append(people.pop(idx))
 
 print('<')
 for i in range(len(delete)):

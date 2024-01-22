@@ -24,6 +24,7 @@ def union(a, b):
 
 edges = []
 total_cost = 0
+cnt = 0
 
 # 간선들 정렬
 for i in range(E):
@@ -34,11 +35,13 @@ for i in range(E):
 edges.sort()
 
 # 크루스칼 알고리즘 수행
-for i in range(E):
-    cost, a, b = edges[i]
-
+for cost, a, b in edges:
     if find(a) != find(b): # 둘의 부모 노드가 같지 않다면 (같으면 사이클 발생해서 안 됨)
         union(a, b)
         total_cost += cost
+        cnt += 1
+
+        if cnt == V-1:
+            break
 
 print(total_cost)

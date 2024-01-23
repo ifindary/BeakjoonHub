@@ -21,8 +21,6 @@ def dfs(v):
             dfs(i)
 
 for j in range(1, N+1):
-    if visited .count(True)==N:
-        break
     if not visited[j]:
         cc += 1
         dfs(j)

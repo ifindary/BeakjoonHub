@@ -1,7 +1,6 @@
-from collections import deque
 import sys
 input = sys.stdin.readline
-sys.setrecursionlimit(10**9)
+sys.setrecursionlimit(10**9) # RecursionError 방지
 
 N, M = map(int, input().split()) # N 학생 수, M 힌트
 graph = [[] for _ in range(N+1)] # 대상:[선행 조건] 형태

@@ -12,7 +12,4 @@ for i in range(N-1, -1, -1):
     cnt += K//coins[i]
     K %= coins[i]
 
-    if K == 0:
-        break
-
 print(cnt)

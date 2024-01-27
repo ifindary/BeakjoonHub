@@ -8,8 +8,9 @@ coins = [int(input()) for _ in range(N)]
 
 cnt = 0
 
-for i in range(N-1, -1, -1):
-    cnt += K//coins[i]
-    K %= coins[i]
+for coin in reversed(coins):
+    if K // coin:
+        cnt += K//coin
+        K %= coin
 
 print(cnt)

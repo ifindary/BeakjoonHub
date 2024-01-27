@@ -9,13 +9,10 @@ coins = [int(input()) for _ in range(N)]
 cnt = 0
 
 for i in range(N-1, -1, -1):
+    cnt += K//coins[i]
+    K %= coins[i]
+
     if K == 0:
         break
-
-    temp = K//coins[i]
-
-    if temp > 0:
-        cnt += temp
-        K -= temp * coins[i]    
 
 print(cnt)

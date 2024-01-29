@@ -1,18 +1,12 @@
 import sys
 input=sys.stdin.readline
 
-expression = list(input().split('-'))
-number = []
-temp=[]
+expression = input().split('-')
 
-for i in expression:
-  if not '+' in i:
-    number.append(int(i))
-  else:
-    temp = list(map(int, i.split('+')))
-    number.append(sum(temp))
+for i in range(len(expression)):
+  expression[i] = sum(map(int, expression[i].split('+')))
+  
+  if i > 0:
+    expression[0] -= expression[i]
 
-for i in range(1,len(number)):
-  number[0] -= number[i]
-
-print(number[0])
+print(expression[0])

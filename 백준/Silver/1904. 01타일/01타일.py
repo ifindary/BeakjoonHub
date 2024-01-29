@@ -1,7 +1,7 @@
 import sys
 input = sys.stdin.readline
 
-N = int(input())
+N = int(input())%47244
 
 a = 1
 b = 1

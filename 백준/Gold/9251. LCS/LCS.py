@@ -2,18 +2,19 @@ import sys
 input=sys.stdin.readline
 
 def LCS():
-  A = 'O'+input().rstrip() # 첫 번째 문자열
-  B = 'O'+input().rstrip() # 두 번째 문자열
+  A = input().rstrip() # 첫 번째 문자열
+  B = input().rstrip() # 두 번째 문자열
 
-  l = [[0]*(len(B)) for _ in range(len(A))]
+  l = [0]*(len(B))
 
-  for i in range(1, len(A)):
-    for j in range(1, len(B)):
-      if A[i] == B[j]:
-        l[i][j] = l[i-1][j-1] + 1
-      else:
-        l[i][j] = max(l[i-1][j], l[i][j-1])
+  for a in A:
+    cnt = 0
+    for i, b in enumerate(B): # 인덱스, 문자열
+      if cnt < l[i]:
+        cnt = l[i]
+      elif a == b:
+        l[i] = cnt+1
 
-  print(l[len(A)-1][len(B)-1])
+  print(max(l))
 
 LCS()

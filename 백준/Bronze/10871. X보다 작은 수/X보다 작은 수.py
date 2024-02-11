@@ -1,13 +1,12 @@
 import sys
 input=sys.stdin.readline
 
-def is_min():
+def is_less():
     N, X = map(int, input().split())
-
-    numbers = list(map(int, input().split()))
+    A = list(map(int, input().split()))
     ans = []
 
-    for a in numbers:
+    for a in A:
         if a < X:
             ans.append(a)
 
@@ -15,4 +14,4 @@ def is_min():
 
 
 # main
-is_min()
+is_less()

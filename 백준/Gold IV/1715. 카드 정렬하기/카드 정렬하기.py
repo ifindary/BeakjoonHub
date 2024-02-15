@@ -2,11 +2,11 @@ import heapq
 import sys
 input=sys.stdin.readline
 
-N = int(input())
-numbers = [int(input()) for _ in range(N)]
-heapq.heapify(numbers)
-
 def cards():
+    N = int(input())
+    numbers = [int(input()) for _ in range(N)]
+    heapq.heapify(numbers)
+
     sum = 0
 
     if N == 1:
@@ -19,4 +19,5 @@ def cards():
 
     return sum
 
+# main
 print(cards())

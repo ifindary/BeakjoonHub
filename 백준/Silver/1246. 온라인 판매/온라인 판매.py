@@ -12,7 +12,7 @@ def egg_selling():
     for i in range(min(M,N)):
         profit = (i+1)*P[i]
 
-        if profit >= max_profit:
+        if profit > max_profit:
             price = P[i]
             max_profit = profit
 

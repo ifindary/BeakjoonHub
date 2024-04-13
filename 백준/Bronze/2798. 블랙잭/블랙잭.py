@@ -5,11 +5,10 @@ input = sys.stdin.readline
 N, M = map(int, input().split())
 cards = list(map(int, input().rstrip().split()))
 
-case = list(combinations(cards, 3))
 ans = 0
 
-for i in range(len(case)):
-    temp = sum(case[i])
+for com in combinations(cards, 3):
+    temp = sum(com)
 
     if temp <= M and temp > ans:
         ans = temp

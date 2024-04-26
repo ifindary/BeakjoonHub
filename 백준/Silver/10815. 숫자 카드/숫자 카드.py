@@ -1,25 +1,19 @@
-n = int(input())
-N = list(map(int, input().split()))
-m = int(input())
-M = list(map(int, input().split()))
-N.sort()
+import sys
+input = sys.stdin.readline
 
+N = int(input())
+cards = list(map(int, input().rstrip().split()))
 
-def bs(x):
-    low = 0
-    high = n - 1
+M = int(input())
+targets = list(map(int, input().rstrip().split()))
 
-    while low <= high:
-        mid = (low + high) // 2
-        if N[mid] == x:
-            return 1
-        elif x < N[mid]:
-            high = mid - 1
-        else:
-            low = mid + 1
+dict = {} # 딕셔너리
 
-    return 0
+for i in range(N):
+    dict[cards[i]] = 0
 
-
-for i in M:
-    print(bs(i), end=' ')
+for i in range(M):
+    if targets[i] in dict:
+        print(1, end=' ')
+    else:
+        print(0, end=' ')

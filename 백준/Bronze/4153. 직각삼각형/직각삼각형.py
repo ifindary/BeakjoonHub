@@ -1,7 +1,7 @@
 while True:
     numbers = list(map(int, input().split()))
 
-    if numbers[0] == 0:
+    if numbers == [0, 0, 0]:
         break
 
     numbers.sort()

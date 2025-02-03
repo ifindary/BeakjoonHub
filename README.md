@@ -1,6 +1,4 @@
 > 현재는 [LeetCode](https://github.com/ifindary/LeetHub)를 풀고 있습니다.
->
-> I have now moved to [LeetCode](https://github.com/ifindary/LeetHub).
 
 # BeakjoonHub
 

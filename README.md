@@ -1,4 +1,4 @@
-> I have now moved to [LeetCode](https://github.com/ifindary/LeetHub).
+> Currently solving problems on [LeetCode](https://github.com/ifindary/LeetHub).
 
 # BeakjoonHub
 

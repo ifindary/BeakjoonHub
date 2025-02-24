@@ -1,4 +1,4 @@
-> Currently solving problems on [LeetCode](https://github.com/ifindary/LeetHub).
+> I rarely use Baekjoon now and am solving problems on LeetCode. [LeetCode](https://github.com/ifindary/LeetHub).
 
 # BeakjoonHub
 
